@@ -1,6 +1,8 @@
 function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressInputName="tildadelivery-onelineaddress",
-						   startCityName="Уфа", weight=4000, height=35, width=35, depth=20, addressWrapper="addresses-wrapper") {
+                           startCityName="Уфа", weight=4000, height=35, width=35, depth=20,
+                           addressWrapper="addresses-wrapper", funcInCallback=()=>{}) {
     function callbackBB_function(data) {
+        funcInCallback();
         var dcash = parseFloat(data.price);
         window.tcart.delivery.price = dcash;
         var addr = data.name + ": " + data.address;
