@@ -1,6 +1,6 @@
 // Почта России
 function getPochtaWidget(pointName="Отделения и почтоматы", addressInputName="tildadelivery-onelineaddress",
-                        addressWrapper="addresses-wrapper"){
+                        addressWrapper="addresses-wrapper", funcInCallback=()=>{}){
     $("input[name='" + addressInputName + "']").prop("readonly", true);
     var all = $(".t-input-description").map(function() {
         return this.innerHTML;
@@ -15,6 +15,7 @@ function getPochtaWidget(pointName="Отделения и почтоматы", a
       '<span class="t706__cartwin-totalamount-info_value">? p.</span>'
     );
     funcStr = "function callbackPostCode(data) {"+
+        "  funcInCallback();" + 
         "  var dcash = data.cashOfDelivery / 100;" +
         "  window.tcart.delivery.price = dcash;" +
         "  var addr = data.regionTo + ', ' + data.cityTo + ', ' + data.addressTo + ', ' + data.pvzType;" +
