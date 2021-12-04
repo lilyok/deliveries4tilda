@@ -18,7 +18,7 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
             );
             $('.t706__cartwin-totalamount-info').append(
               '<span class="t706__cartwin-totalamount-info_label">' + pointName + ':</span>' +
-              '<span class="t706__cartwin-totalamount-info_value">0 p.</span>'
+              '<span class="t706__cartwin-totalamount-info_value">? p.</span>'
             );
         }
 

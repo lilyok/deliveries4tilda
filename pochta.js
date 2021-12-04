@@ -29,8 +29,7 @@ function getPochtaWidget(pointName="Отделения и почтоматы", a
         "       }" +
         "    );" +
         "    $('.t706__cartwin-totalamount-info').append(" +
-        "      '<span class=\"t706__cartwin-totalamount-info_label\">' + pointName + ':</span>' +" +
-        "      '<span class="\"t706__cartwin-totalamount-info_value\">0 p.</span>'" +
+        "      '<span class=\"t706__cartwin-totalamount-info_label\">' + pointName + ':</span><span class="\"t706__cartwin-totalamount-info_value\">? p.</span>' " +
         "    );" +
         "  }" +
         "  $('.t706__cartwin-totalamount-info_value').each(" + 
