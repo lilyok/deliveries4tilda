@@ -19,6 +19,20 @@ function getPochtaWidget(pointName="Отделения и почтоматы", a
         "  var dcash = data.cashOfDelivery / 100;" +
         "  window.tcart.delivery.price = dcash;" +
         "  var addr = data.regionTo + ', ' + data.cityTo + ', ' + data.addressTo + ', ' + data.pvzType;" +
+        "  if ($('.t706__cartwin-totalamount-info_value').length < 2) {" +
+        "    var pointName = '';" +
+        "    $('#delivery-services-wrapper > label').each(" +
+        "       function() {" +
+        "           if(this.firstChild.checked) {" +
+        "               pointName = this.firstChild.defaultValue;" +
+        "           }" +
+        "       }" +
+        "    );" +
+        "    $('.t706__cartwin-totalamount-info').append(" +
+        "      '<span class=\"t706__cartwin-totalamount-info_label\">' + pointName + ':</span>' +" +
+        "      '<span class="\"t706__cartwin-totalamount-info_value\">0 p.</span>'" +
+        "    );" +
+        "  }" +
         "  $('.t706__cartwin-totalamount-info_value').each(" + 
         "    function(i) {" +
                "if (i==1) this.innerHTML = dcash + ' р.'; i++" +
