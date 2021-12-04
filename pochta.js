@@ -1,6 +1,6 @@
 // Почта России
 function getPochtaWidget(pointName="Отделения и почтоматы", addressInputName="tildadelivery-onelineaddress",
-                        addressWrapper="addresses-wrapper", funcInCallback=()=>{}){
+                        addressWrapper="addresses-wrapper", funcInCallback=()=>{}, funcOutCallback=()=>{}){
     $("input[name='" + addressInputName + "']").prop("readonly", true);
     var all = $(".t-input-description").map(function() {
         return this.innerHTML;
@@ -28,6 +28,7 @@ function getPochtaWidget(pointName="Отделения и почтоматы", a
                 "window.tcart.amount  + ' р.');" +
         "  $(\"input[name='" + addressInputName + "']\").val(" +
         "    addr);" +
+        "  funcOutCallback();" +
         "}";
     str = "<script>ecomStartWidget({" +
         "id: 19205," + 

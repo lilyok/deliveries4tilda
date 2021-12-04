@@ -1,6 +1,6 @@
 function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressInputName="tildadelivery-onelineaddress",
                            startCityName="Уфа", weight=4000, height=35, width=35, depth=20,
-                           addressWrapper="addresses-wrapper", funcInCallback=()=>{}) {
+                           addressWrapper="addresses-wrapper", funcInCallback=()=>{}, funcOutCallback=()=>{}) {
     function callbackBB_function(data) {
         funcInCallback();
         var dcash = parseFloat(data.price);
@@ -14,6 +14,7 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
         $("input[name='tildadelivery-onelineaddress']").val(addr);
         window.tcart.amount = window.tcart.prodamount + dcash;
         $('.t706__cartwin-totalamount').html(window.tcart.amount  + ' р.');
+        funcOutCallback();
     }
 
     $("input[name='tildadelivery-onelineaddress']").prop("readonly", true);
