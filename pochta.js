@@ -38,5 +38,5 @@ function getPochtaWidget(pointName="Отделения и почтоматы", a
         "});" + funcStr + "<"+  "/script>";
 
     $div.append(str);
-    $( "#addresses-wrapper" ).prepend($div);
+    $( "#" + addressWrapper ).prepend($div);
 }
