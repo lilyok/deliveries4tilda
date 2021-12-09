@@ -18,15 +18,17 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
             );
             $('.t706__cartwin-totalamount-info').append(
               '<span class="t706__cartwin-totalamount-info_label">' + pointName + ':</span>' +
-              '<span class="t706__cartwin-totalamount-info_value">? p.</span>'
+              '<span class="t706__cartwin-totalamount-info_value" id=\"deliveryValue\">? p.</span>'
             );
         }
 
-        $('.t706__cartwin-totalamount-info_value').each(
-            function(i) {
-                if (i==1) this.innerHTML = dcash + ' р.';
-                i++
-        });
+        $('#deliveryValue').innerHTML = dcash + ' р.';
+
+        // $('.t706__cartwin-totalamount-info_value').each(
+        //     function(i) {
+        //         if (i==1) this.innerHTML = dcash + ' р.';
+        //         i++
+        // });
         $("input[name='tildadelivery-onelineaddress']").val(addr);
         window.tcart.amount = window.tcart.prodamount + dcash;
         $('.t706__cartwin-totalamount').html(window.tcart.amount  + ' р.');
