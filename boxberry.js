@@ -22,7 +22,7 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
             );
         }
 
-        $('#deliveryValue').innerHTML.text(dcash + ' р.');
+        $('#deliveryValue').text(dcash + ' р.');
 
         $("input[name='tildadelivery-onelineaddress']").val(addr);
         window.tcart.amount = window.tcart.prodamount + dcash;
