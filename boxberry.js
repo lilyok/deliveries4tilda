@@ -7,7 +7,7 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
         window.tcart.delivery.price = dcash;
         var addr = data.name + ": " + data.address;
 
-        if ($('.t706__cartwin-totalamount-info_value').length < 2) {
+        if ($('#deliveryValue').length == 0) {
             var pointName = "";
             $('#delivery-services-wrapper > label').each(
                 function() {
@@ -24,11 +24,6 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
 
         $('#deliveryValue').innerHTML = dcash + ' р.';
 
-        // $('.t706__cartwin-totalamount-info_value').each(
-        //     function(i) {
-        //         if (i==1) this.innerHTML = dcash + ' р.';
-        //         i++
-        // });
         $("input[name='tildadelivery-onelineaddress']").val(addr);
         window.tcart.amount = window.tcart.prodamount + dcash;
         $('.t706__cartwin-totalamount').html(window.tcart.amount  + ' р.');
@@ -42,7 +37,7 @@ function getBoxBerryWidget(key, pointName="Доставка Boxberry", addressIn
         
     $('.t706__cartwin-totalamount-info').append(
       '<span class="t706__cartwin-totalamount-info_label">' + pointName + ':</span>' +
-      '<span class="t706__cartwin-totalamount-info_value">? p.</span>'
+      '<span class="t706__cartwin-totalamount-info_value" id=\"deliveryValue\">? p.</span>'
     );
 
     $( "#" + addressWrapper ).prepend($div);
